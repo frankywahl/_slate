@@ -1,0 +1,53 @@
+# Configs
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config secondsBetweenRepeat 0.1
+config checkDefaultsOnLoad true
+config focusCheckWidthMax 3000
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+#config windowHintsDuration 5
+config windowHintsSpread true
+#config windowHintsOrder persist
+# config gridBackgroundColor "75;77;81;1.0"
+ 
+# Monitor Aliases
+alias mon-laptop      0
+alias mon-external-display    1
+ 
+# Misc Aliases
+alias showHintsLeftHand hint ASDFGQWERTZXCVB 
+alias showNormalHint hint ASDFGHJKLQWERTYUIOPZXCVBNM  
+ 
+# Abstract positions
+alias full          move screenOriginX;screenOriginY                  screenSizeX;screenSizeY
+alias lefthalf      move screenOriginX;screenOriginY                  screenSizeX/2;screenSizeY
+alias righthalf     move screenOriginX+screenSizeX/2;screenOriginY    screenSizeX/2;screenSizeY
+alias rightmost     move screenOriginX+screenSizeX*0.4;screenOriginY  screenSizeX*0.6;screenSizeY
+alias rightless     move screenOriginX+screenSizeX*0.6;screenOriginY  screenSizeX*0.4;screenSizeY
+alias leftmost      move screenOriginX;screenOriginY                  screenSizeX*0.6;screenSizeY
+alias leftless      move screenOriginX;screenOriginY                  screenSizeX*0.4;screenSizeY
+
+# Grid
+bind g:cmd grid padding:5 ${mon-laptop}:10,10 ${mon-external-display}:10,10
+
+# Hints
+bind e:cmd  ${showNormalHint}
+
+# ===================================== 
+# The HYPER key                        =
+# ===================================== 
+                                       =
+#alias hyper ctrl;shift;alt;cmd         
+alias hyper alt                         
+                                        
+# Location bindings                     
+bind h:${hyper} ${lefthalf}             
+bind k:${hyper} ${full}                 
+bind j:${hyper} ${full}                 
+bind l:${hyper} ${righthalf}            
+bind y:${hyper} corner top-left resize:screenSizeX/2;screenSizeY/2
+bind o:${hyper} corner top-right resize:screenSizeX/2;screenSizeY/2
+bind .:${hyper} corner bottom-right resize:screenSizeX/2;screenSizeY/2
+bind n:${hyper} corner bottom-left resize:screenSizeX/2;screenSizeY/2
