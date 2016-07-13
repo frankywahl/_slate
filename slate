@@ -32,9 +32,6 @@ alias leftless      move screenOriginX;screenOriginY                  screenSize
 # Grid
 bind g:cmd grid padding:5 ${mon-laptop}:10,10 ${mon-external-display}:10,10
 
-# Hints
-bind e:cmd  ${showNormalHint}
-
 # ===================================== 
 # The HYPER key                        =
 # ===================================== 
