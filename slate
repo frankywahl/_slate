@@ -2,7 +2,7 @@
 config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
-config secondsBetweenRepeat 0.1
+config secondsBetweenRepeat 0.005
 config checkDefaultsOnLoad true
 config focusCheckWidthMax 3000
 config windowHintsShowIcons true
