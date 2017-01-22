@@ -15,6 +15,8 @@ config windowHintsSpread true
 # Monitor Aliases
 alias mon-laptop      0
 alias mon-external-display    1
+
+alias movestep 32
  
 # Misc Aliases
 alias showHintsLeftHand hint ASDFGQWERTZXCVB 
@@ -48,3 +50,15 @@ bind y:${hyper} corner top-left resize:screenSizeX/2;screenSizeY/2
 bind o:${hyper} corner top-right resize:screenSizeX/2;screenSizeY/2
 bind .:${hyper} corner bottom-right resize:screenSizeX/2;screenSizeY/2
 bind n:${hyper} corner bottom-left resize:screenSizeX/2;screenSizeY/2
+
+# Move stepwise.
+bind h:ctrl,alt nudge -${movestep} +0
+bind j:ctrl,alt nudge +0 +${movestep}
+bind k:ctrl,alt nudge +0 -${movestep}
+bind l:ctrl,alt nudge +${movestep} +0
+
+# Resize stepwise.
+bind h:ctrl,cmd,alt resize -${movestep} +0
+bind j:ctrl,cmd,alt resize +0 +${movestep}
+bind k:ctrl,cmd,alt resize +0 -${movestep}
+bind l:ctrl,cmd,alt resize +${movestep} +0
